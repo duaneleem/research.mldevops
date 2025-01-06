@@ -1,0 +1,16 @@
+# version: '3.8'
+
+services:
+  mlflow:
+    build: .
+    container_name: mlflow-server
+    ports:
+      - "5000:5000"
+    volumes:
+      # Mount local ./artifacts/data to /app/data in the container
+      - ./artifacts/data:/app/data
+    environment:
+      # Useful if other services or your local scripts want to discover this tracking URI
+      MLFLOW_TRACKING_URI: http://0.0.0.0:5000
+    restart: unless-stopped
+
