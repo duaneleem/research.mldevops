@@ -1,5 +1,5 @@
 # Use the official MLflow image
-FROM ghcr.io/mlflow/mlflow:v2.0.1
+FROM ghcr.io/mlflow/mlflow:v2.19.0
 
 ENV MLFLOW_BACKEND_STORE_URI=sqlite:////app/data/mlflow.db
 ENV MLFLOW_ARTIFACT_ROOT=/app/data/mlruns
